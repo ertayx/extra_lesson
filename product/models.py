@@ -5,6 +5,8 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 # Create your models here.
+
+# создаем модельку продукта что бы в базе данных появилась таблица
 class Product(models.Model):
     title = models.CharField(max_length=100)
     price = models.IntegerField()

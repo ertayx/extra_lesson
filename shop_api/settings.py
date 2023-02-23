@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # 'rest_framework_simplejwt',
     'rest_framework',
 
-    'product',
+    'product', # указываем наше приложение
 ]
 
 MIDDLEWARE = [
@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'shop_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# настройка базы данных
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -87,7 +88,6 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

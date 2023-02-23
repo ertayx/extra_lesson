@@ -8,9 +8,9 @@ from .models import Product
 from .serializers import ProductSerializer
 
 class ProductCreateAPIView(generics.CreateAPIView):
-    queryset = Product.objects.all()
-    serializer_class = ProductSerializer
-    # permission_classes = [permissions.IsAdminUser, ]
+    queryset = Product.objects.all() # указываем с каким набором данных наш клиент работал
+    serializer_class = ProductSerializer # указываем с каким сералайзером(полями) наш клиент работал
+    # permission_classes = [permissions.IsAdminUser, ] # это встроенный пермишн, только АДМИН может создать продукт
 
 class ProductListAPIView(generics.ListAPIView):
     queryset = Product.objects.all()
@@ -27,11 +27,17 @@ class ProductUpdateAPIView(generics.UpdateAPIView):
 class ProductDeleteAPIView(generics.DestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-
+# до этой строчки мы пишем CRUD на generics
 
 class ProductModelViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+# до этой строчки мы написали CRUD на 3 строчки 
+
+
+
+
 
 # class ProductCreateMixin(mixins.CreateModelMixin):
 #     queryset = Product.objects.all()
